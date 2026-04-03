@@ -2,74 +2,118 @@
 
 ## Overview
 
-Missed flight connections are a major issue in air travel, impacting passenger experience and airline operations.
+This project analyzes U.S. domestic flight delay data from 2024 to understand the main operational drivers of delays and their impact on passenger connection risk.
 
-This project investigates the root causes of flight delays and their impact on connection risk using real-world U.S. flight data from 2024.
+The analysis combines exploratory data analysis and machine learning to investigate how factors such as airline, airport, route, and departure delays influence the probability of missed connections.
 
-The insights generated here serve as the foundation for the **GateRunner** system — a decision-support tool designed to predict and mitigate missed connections.
+This project also supports the concept behind **GateRunner**, a decision-support tool designed to estimate connection risk in real time.
 
 ---
 
-## Problem Statement
+## Business Problem
 
-Passengers often miss connecting flights due to unpredictable arrival delays.
+Missed flight connections are a major operational and passenger experience issue in air travel.
 
-Airlines and airports lack dynamic tools to assess connection feasibility in real time.
+Even when most flights operate within acceptable limits, a smaller number of severe delays can significantly disrupt passenger itineraries and increase operational complexity.
 
-**Key challenge:**
-> How can we predict delays and quantify their impact on connection risk?
+The goal of this project is to identify delay patterns, quantify connection risk, and build a predictive model that can support better decision-making.
 
 ---
 
 ## Objectives
 
-- Identify the main causes of flight delays
-- Quantify delay patterns across airlines, airports, and time
-- Analyze how delays affect connection feasibility
-- Provide data-driven insights for reducing missed connections
+- Analyze the distribution and causes of flight delays
+- Identify high-risk patterns by airline and airport
+- Segment flights into connection risk categories
+- Build a machine learning model to predict connection risk
+- Connect the results to a real-world product concept: **GateRunner**
 
 ---
 
 ## Dataset
 
-- Source: U.S. Flights Data (2024)
-- Format: Parquet
-- Includes:
-  - Flight schedules
-  - Arrival and departure delays
-  - Delay causes (carrier, weather, NAS, etc.)
+The project uses the **Flight Delay Dataset — 2024**, which contains cleaned flight performance and delay information for U.S. domestic flights.
+
+Key characteristics:
+- 2024 domestic flight data
+- Delay causes included
+- Cleaned and standardized column names
+- Binary cancellation/diversion indicators
+- Delay-related missing values handled in preprocessing
+
+For performance reasons, this notebook uses the provided sample dataset during exploratory analysis and model development.
 
 ---
 
-## Key Insights (to be updated)
+## Key Insights
 
-- Late aircraft is a major driver of delays
-- Delay propagation significantly impacts downstream flights
-- Even moderate delays can lead to missed connections
-
----
-
-## Proposed Solution
-
-This analysis supports the development of **GateRunner**, which aims to:
-
-- Predict arrival delays
-- Estimate real connection time
-- Simulate connection success probability
-- Provide risk-based recommendations
+- Approximately **20.4%** of flights experienced significant arrival delays greater than 15 minutes
+- About **7.57%** of flights showed severe delays greater than 60 minutes
+- Delay propagation was a major factor, with **departure delay** being the most important predictor in the model
+- Delay risk varies significantly across airlines and airports
+- Operational risk is better captured through **SAFE / TIGHT / RISKY** segmentation than by average delay alone
 
 ---
 
-## Project Structure
+## Modeling
 
-- `notebooks/` → Data analysis and exploration
-- `README.md` → Project overview
-- `requirements.txt` → Dependencies
+A Random Forest Classifier was used to predict connection risk categories:
+
+- **SAFE**
+- **TIGHT**
+- **RISKY**
+
+### Model Performance
+- Accuracy: **90%**
+
+### Main Finding
+The most important feature was:
+
+- `dep_delay`
+
+This suggests that delay propagation is a key mechanism behind missed connections.
 
 ---
 
-## Next Steps
+## GateRunner Connection
 
-- Build delay prediction model
-- Simulate connection scenarios
-- Integrate results into GateRunner application
+This project supports the logic behind **GateRunner**, a proposed real-time connection risk tool.
+
+The analysis shows that connection risk can be estimated from operational variables such as:
+- departure delay
+- airline
+- airport
+- route
+- flight distance
+
+This makes it possible to move from descriptive analysis to predictive decision support in aviation operations.
+
+---
+
+## Tools and Technologies
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter Notebook
+
+---
+
+## Repository Contents
+
+- `Flight_delays.ipynb` — full exploratory analysis and modeling workflow
+- `flight_data_2024_data_dictionary.csv` — dataset column reference
+- `README.md` — project overview
+
+---
+
+## Future Improvements
+
+- Train the model on the full dataset
+- Test additional classification models
+- Add feature engineering for time blocks and airport volume
+- Build an interactive dashboard
+- Integrate the logic into the GateRunner application
