@@ -1,6 +1,6 @@
 # ✈️ GateRunner — Flight Connection Risk Analysis 
 
-> **Motivation:** I work at Munich Airport, I witnessed firsthand how
+> **Motivation:** I work at Munich Airport, I witness firsthand how
 > disorienting and stressful missed connections can be for passengers. This
 > project combines that operational experience with data science to understand
 > the problem at scale — and build toward a solution.
