@@ -1,4 +1,4 @@
-# ✈️ GateRunner — Flight Connection Risk Analysis 
+# ✈️ Flight Connection Risk Analysis - GateRunner 
 
 > **Motivation:** I work at Munich Airport, I witness firsthand how
 > disorienting and stressful missed connections can be for passengers. This
