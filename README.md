@@ -32,7 +32,7 @@ The goal of this project is to identify delay patterns, quantify connection risk
 
 ## Dataset
 
-The project uses the **Flight Delay Dataset — 2024**, which contains cleaned flight performance and delay information for U.S. domestic flights.
+This project analyzes U.S. domestic **flight delays from 2024** to understand connection risk and evaluate whether missed connections can be predicted before departure. It combines exploratory data analysis, risk segmentation, and machine learning, and supports the product logic behind GateRunner.
 
 Key characteristics:
 - 2024 domestic flight data
