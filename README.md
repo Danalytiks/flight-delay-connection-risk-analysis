@@ -1,4 +1,4 @@
-# ✈️ Flight Delay & Connection Risk Analysis
+# ✈️ GateRunner — Flight Connection Risk Analysis 
 
 > **Motivation:** Having worked at Munich Airport, I witnessed firsthand how
 > disorienting and stressful missed connections can be for passengers. This
@@ -56,7 +56,15 @@ operational complexity for airlines.
 
 ---
 
-## Key Findings
+## 🔍 Key Insights
+
+- **20.4% of flights** are delayed more than 15 minutes (1 in 5 flights)
+- **7.6% of flights** are delayed more than 60 minutes (high risk of missed connection)
+- Delays are not random — they are **systematic and predictable**
+- **Late aircraft delay** is the main driver of disruption
+- Certain airlines and airports show consistently higher risk patterns
+
+### Detailed Findings
 
 | Finding | Value |
 |---|---|
@@ -77,27 +85,30 @@ operational complexity for airlines.
 
 ---
 
-## Machine Learning Models
+## ⚖️ Model Comparison: Performance vs Realism
 
-Five models were built and compared using **macro F1-score**, which gives
-equal weight to all classes including the minority RISKY class.
+Two models were evaluated:
+- **Model A:** includes `dep_delay` (high predictive power)
+- **Model B:** excludes `dep_delay` (realistic pre-departure scenario)
 
-| Model | F1 Macro |
+| Model | Macro F1 |
 |---|---|
-| Random Forest — Baseline (3-class) | 0.30 |
-| Random Forest — Feature Engineering (3-class) | 0.43 |
-| Random Forest — Binary (SAFE vs AT RISK) | 0.59 |
-| XGBoost — Binary (SAFE vs AT RISK) | 0.59 |
-| Random Forest — With `dep_delay` (reference) | **0.82** |
+| With `dep_delay` | ~0.82 |
+| Without `dep_delay` — Baseline | ~0.30 |
+| Without `dep_delay` — Feature Engineering | ~0.43 |
+| Without `dep_delay` — Binary (SAFE vs AT RISK) | ~0.59 |
 
-### Key Trade-off
+### Key Takeaway
 
-The model with `dep_delay` achieves F1 = 0.82 but requires information
-only available **after** the flight departs — making it unsuitable for
-pre-departure predictions.
+`dep_delay` is a dominant predictor of connection risk.
+However, it introduces **data leakage**, since it may not be available before departure.
 
-The **binary engineered model (F1 = 0.59)** uses only pre-departure features
-and represents the most realistic option for a production system.
+This reveals a critical trade-off between:
+- **Model accuracy**
+- **Real-world applicability**
+
+The binary engineered model (F1 = 0.59) uses only pre-departure features
+and represents the most realistic baseline for a production system.
 
 ---
 
@@ -128,10 +139,27 @@ real-world passenger decision tool.
 
 ---
 
+## 🚀 Why This Matters
+
+This project goes beyond model performance.
+
+It shows how data science can:
+- Identify operational risk patterns
+- Support real-time decision-making
+- Bridge analysis and product design
+
+It also demonstrates how **domain knowledge** (aviation) can significantly
+enhance data science solutions.
+
+This work directly supports the concept behind **GateRunner**, turning real
+operational problems into data-driven tools.
+
+---
+
 ## GateRunner Connection
 
-This project supports the logic behind **GateRunner** — a proposed
-passenger guidance tool for airports.
+This project serves as the analytical foundation for **GateRunner** — a
+proposed passenger guidance tool for airports.
 
 **The core idea:** When a passenger lands with a tight connection, GateRunner
 answers one question instantly:
