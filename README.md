@@ -1,6 +1,6 @@
-# ✈️ Flight Connection Risk Analysis - GateRunner 
+# ✈️ GateRunner — Flight Connection Risk Analysis
 
-> **Motivation:** I work at Munich Airport, I witness firsthand how
+> **Motivation:** Having worked at Munich Airport, I witnessed firsthand how
 > disorienting and stressful missed connections can be for passengers. This
 > project combines that operational experience with data science to understand
 > the problem at scale — and build toward a solution.
@@ -59,7 +59,7 @@ operational complexity for airlines.
 ## 🔍 Key Insights
 
 - **20.4% of flights** are delayed more than 15 minutes (1 in 5 flights)
-- **7.6% of flights** are delayed more than 60 minutes (high risk of missed connection)
+- **7.7% of flights** are delayed more than 60 minutes (high risk of missed connection)
 - Delays are not random — they are **systematic and predictable**
 - **Late aircraft delay** is the main driver of disruption
 - Certain airlines and airports show consistently higher risk patterns
@@ -68,20 +68,20 @@ operational complexity for airlines.
 
 | Finding | Value |
 |---|---|
-| Flights delayed > 15 min | **~20%** — 1 in 5 flights |
-| Flights delayed > 60 min (RISKY) | **~8%** — high missed connection risk |
+| Flights delayed > 15 min | **~20.4%** — 1 in 5 flights |
+| Flights delayed > 60 min (RISKY) | **~7.7%** — high missed connection risk |
 | Primary cause of delays | **Late aircraft propagation** (cascading delays) |
 | Most reliable airline | **HA** (Hawaiian Airlines) |
 | Highest risk airline | **F9, G4** — nearly 1 in 5 flights RISKY |
-| Highest risk airport | **MIA** (Miami International) — 15% RISKY |
+| Highest risk airports | **IAD, DEN** — over 20% of flights RISKY |
 
 ### Risk Segmentation
 
 | Category | Definition | Share of Flights |
 |---|---|---|
 | ✅ SAFE | Arrival delay ≤ 15 min | ~78% |
-| ⚠️ TIGHT | 15 min < delay ≤ 60 min | ~13% |
-| 🔴 RISKY | Arrival delay > 60 min | ~9% |
+| ⚠️ TIGHT | 15 min < delay ≤ 60 min | ~14% |
+| 🔴 RISKY | Arrival delay > 60 min | ~7.7% |
 
 ---
 
@@ -190,7 +190,8 @@ The analysis proves that:
 
 ```
 flight-delay-connection-risk-analysis/
-├── Flight_delays_EDA.ipynb        # Full analysis & modeling
+├── Flight_delays_EDA_EN.ipynb     # Full analysis & modeling (English)
+├── Flight_delays_EDA_PT.ipynb     # Full analysis & modeling (Portuguese)
 ├── models/
 │   ├── model_binary.joblib        # Trained binary model
 │   ├── carriers.joblib            # Airline list
@@ -217,7 +218,7 @@ flight-delay-connection-risk-analysis/
 
 ## About
 
-Built by **Daniela Glotzbach** as part of a Data Science career transition.
+Built by **Daniela Costa Glotzbach** as part of a Data Science career transition.
 
 Background in airport operations (Munich Airport) combined with data science
 training to address a real-world passenger experience problem.
