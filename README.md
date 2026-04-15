@@ -1,7 +1,7 @@
 # ✈️ GateRunner — Flight Connection Risk Analysis
 
-> **Motivation:** Having worked at Munich Airport, I witnessed firsthand how
-> disorienting and stressful missed connections can be for passengers. This
+> **Motivation:** Working at Munich Airport, I witness firsthand how
+disorienting and stressful missed connections can be for passengers. This
 > project combines that operational experience with data science to understand
 > the problem at scale — and build toward a solution.
 
@@ -220,8 +220,7 @@ flight-delay-connection-risk-analysis/
 
 Built by **Daniela Costa Glotzbach** as part of a Data Science career transition.
 
-Background in airport operations (Munich Airport) combined with data science
-training to address a real-world passenger experience problem.
+Current airport operations professional (Munich Airport) combined with data science.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://linkedin.com/in/danalytiks)
 [![GitHub](https://img.shields.io/badge/GitHub-Danalytiks-black?logo=github)](https://github.com/Danalytiks)
