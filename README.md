@@ -111,7 +111,7 @@ This analysis was created to validate the data model behind **GateRunner** — a
 
 ## 👨‍💻 Author
 
-**Dani** — Munich Airport (MUC) operations + Data Science
+**Daniela Costa Glotzbach** — Munich Airport (MUC) operations + Data Science
 
 [![GitHub](https://img.shields.io/badge/GitHub-Danalytiks-181717?style=flat&logo=github)](https://github.com/Danalytiks)
 
