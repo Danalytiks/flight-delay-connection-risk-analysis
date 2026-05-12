@@ -27,19 +27,9 @@ Key fields used: `fl_date`, `op_unique_carrier`, `origin`, `arr_delay`
 
 ---
 
-## 🧮 Risk Classification Model
-
-Each flight is classified based on its arrival delay:
-
-| Category | Condition | Interpretation |
-|---|---|---|
-| 🟢 **SAFE** | arr_delay ≤ 20 min | Passenger has comfortable buffer |
-| 🟡 **TIGHT** | 20 < arr_delay ≤ 35 min | Connection is at risk |
-| 🔴 **RISKY** | arr_delay > 35 min | Connection likely missed |
-
----
-
 ## 📈 Key Findings
+
+![Flight Delay Dashboard](dashboard.jpg)
 
 ### Risk Distribution
 
@@ -63,7 +53,7 @@ Each flight is classified based on its arrival delay:
 
 ### Seasonal Trends
 
-- **Peak delay period**: July 2024 — average arrival delay spiked to ~350 min
+- **Peak delay period**: July 2024 — average arrival delay spiked significantly
 - **Lowest delay period**: January–March 2024
 - Summer months consistently show the highest connection risk
 
@@ -73,10 +63,22 @@ Each flight is classified based on its arrival delay:
 
 | Carrier | Avg Arrival Delay | Risk Level |
 |---|---|---|
-| AA | High | 🔴 |
-| F9 | High | 🔴 |
-| OH | Medium-High | 🟡 |
-| B6 | Medium | 🟡 |
+| AA | ~18 min | 🔴 |
+| F9 | ~17 min | 🔴 |
+| OH | ~13 min | 🟡 |
+| B6 | ~11 min | 🟡 |
+
+---
+
+## 🧮 Risk Classification Model
+
+Each flight is classified based on its arrival delay:
+
+| Category | Condition | Interpretation |
+|---|---|---|
+| 🟢 **SAFE** | arr_delay ≤ 20 min | Passenger has comfortable buffer |
+| 🟡 **TIGHT** | 20 < arr_delay ≤ 35 min | Connection is at risk |
+| 🔴 **RISKY** | arr_delay > 35 min | Connection likely missed |
 
 ---
 
@@ -115,4 +117,4 @@ This analysis was created to validate the data model behind **GateRunner** — a
 
 ---
 
-*Part of the GateRunner project — turning airport data into better passenger experiences.* ✈️
+*Part of the GateRunner project — turning airport data into better passenger experiences.* ✈️tter passenger experiences.* ✈️
