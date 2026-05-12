@@ -29,7 +29,7 @@ Key fields used: `fl_date`, `op_unique_carrier`, `origin`, `arr_delay`
 
 ## 📈 Key Findings
 
-![Flight Delay Dashboard](dashboard.jpg)
+![Flight Delay Dashboard](dashboard-1.jpg)
 
 ### Risk Distribution
 
@@ -111,10 +111,10 @@ This analysis was created to validate the data model behind **GateRunner** — a
 
 ## 👨‍💻 Author
 
-**Daniela Costa Glotzbach** — Munich Airport (MUC) operations + Data Science
+**Dani** — Munich Airport (MUC) operations + Data Science
 
 [![GitHub](https://img.shields.io/badge/GitHub-Danalytiks-181717?style=flat&logo=github)](https://github.com/Danalytiks)
 
 ---
 
-*Part of the GateRunner project — turning airport data into better passenger experiences.* ✈️tter passenger experiences.* ✈️
+*Part of the GateRunner project — turning airport data into better passenger experiences.* ✈️
